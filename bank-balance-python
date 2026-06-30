@@ -1,0 +1,60 @@
+def check_balance(balance):
+  print('Your balance is: ' , balance)
+
+def deposit(balance):
+    try:
+        amount = float(input("How much to deposit: "))
+        balance += amount
+    except:
+        print("Enter a valid number: ")
+
+    return balance
+    
+def withdraw(balance):
+    try:
+        amount = float(input("How much to withdraw: "))
+
+        if amount <= balance:
+            balance -= amount
+            print("Withdrawal successful")
+        else:
+            print("Insufficient funds")
+
+    except:
+        print("Enter a valid number")
+
+    return balance
+          
+balance = 0          
+while True:
+    print("1. Check Balance")
+    print("2. Deposit")
+    print("3. Withdraw")
+    print("4. Quit")
+    choice = input("Choose: ")
+    
+    if choice == "1":
+        check_balance(balance)
+    elif choice == "2":
+        balance = deposit(balance)       
+    elif choice == "3":
+        balance = withdraw(balance)
+    elif choice == "4":
+        print("Exiting...")
+        break
+    else:
+        print("Invalid choice")
+              # Bank Balance Python Project
+
+A simple Python command-line banking program.
+
+## Features
+- Check balance
+- Deposit money
+- Withdraw money
+- Quit the program
+- Handles invalid number inputs
+
+## How to Run
+```bash
+python main.py
